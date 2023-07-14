@@ -25,9 +25,8 @@ jobs:
         with:
           cmd: install
       - run: yarn build
+      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
       - run: yarn publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
 
       # 企业微信消息
       - name: WeChat Work notification by text
