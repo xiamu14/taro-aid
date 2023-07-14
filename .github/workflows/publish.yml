@@ -27,14 +27,14 @@ jobs:
       - run: yarn build
       - run: yarn publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
 
       # 企业微信消息
-      # - name: WeChat Work notification by text
-      #   uses: chf007/action-wechat-work@master
-      #   env:
-      #     WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
-      #   with:
-      #     msgtype: text
-      #     content: '🥹[@redchili/pubsub] 发布成功！'
-      #     mentioned_list: '["wangqing","@all"]'
+      - name: WeChat Work notification by text
+        uses: chf007/action-wechat-work@master
+        env:
+          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
+        with:
+          msgtype: text
+          content: "🥹[taro-aid] 发布成功！"
+          mentioned_list: '["wangqing","@all"]'
