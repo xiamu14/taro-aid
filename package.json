@@ -1,0 +1,38 @@
+{
+  "name": "@yocdev/taro-utils",
+  "version": "0.0.1-alpha.0",
+  "description": "taro-utils",
+  "main": "./build/index.js",
+  "types": "./build",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "rimraf build && tsc",
+    "release": "renew-it"
+  },
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
+  "author": "",
+  "peerDependencies": {
+    "@tarojs/taro": "^3.6.8"
+  },
+  "dependencies": {
+    "@tarojs/taro": "^3.6.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.0",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "babel-preset-taro": "3.6.8",
+    "eslint": "^8.12.0",
+    "eslint-config-taro": "3.6.8",
+    "eslint-plugin-import": "^2.12.0",
+    "renew-it": "^1.5.2",
+    "rimraf": "^5.0.1",
+    "typescript": "^4.1.0"
+  }
+}
